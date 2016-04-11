@@ -1,0 +1,2 @@
+<!-- insert_top '[data-hook="homepage-products"]' -->
+<%= render :partial => 'spree/shared/featured_products', :locals => { :products => @products }  %>

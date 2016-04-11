@@ -1,0 +1,17 @@
+<!-- insert_bottom '#user-info' -->
+
+<% if SpreeExperienceMarketplace::Config[:allow_signup] or @user.experience? %>
+  <br/>
+  <dt class='experience-info'><%= Spree.t(:experience_info) %></dt>
+  <dd class='experience-info'>
+    <% if @user.experience? %>
+      <%= @user.experience.name %>
+      (<%= link_to Spree.t(:edit), spree.edit_admin_experience_path(@user.experience) %>)
+      <%= link_to @user.experience.url, @user.experience.url, target: '_blank' if @user.experience.url.present? %>
+      <br/>
+     
+    <% else %>
+      <%= link_to Spree.t(:signup_to_become_a_experience), spree.new_experience_path %>
+    <% end %>
+  </dd>
+<% end %>

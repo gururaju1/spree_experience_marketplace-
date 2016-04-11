@@ -1,0 +1,30 @@
+<% @body_id = 'experience-details' %>
+<div class="col-md-12" id="experience-header" data-hook="experience-header">
+	<div class="col-md-3" id="experience_left_part" data-hook="experience_left_part">
+		<div data-hook="experience_left_part_wrap">
+			<div id="experience-profile-picture" data-hook="experience_profile_picture">
+				<%= image_tag @experience.profile_picture.url(:medium) %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9" data-hook="experience_right_part">
+		<div data-hook="experience_right_part_wrap">
+			<div id="experience-title">
+				<h1><%= @experience.name %></h1>
+			</div>
+		<div id="experience-location">
+			<%= Spree.t(:experience_since) + " " %><%= timeago @experience.created_at %>
+			<% if @experience.address %>
+				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+				<%=	@experience.address.city %>
+			<% end %>
+		</div>
+		<div id="experience-description" data-hook="experience_description">
+			<%= @experience.bio %>
+			<div class="horizontal-line"></div>
+		</div>
+	</div>
+</div>
+<div class="col-md-12" id="experience-product-list">
+		<%= render :partial => 'spree/experiences/products' %>
+</div>

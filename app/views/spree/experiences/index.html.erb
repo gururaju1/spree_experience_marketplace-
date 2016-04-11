@@ -1,0 +1,16 @@
+<div data-hook="experience-index">
+	<% if @experiences.any? %>
+	<ul id="experiences" class="inline product-listing" data-hook>
+		<% @experiences.each do |experience| %>
+			<div id="experience_<%= experience.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="experience_list_item" itemscope itemtype="http://schema.org/experience">
+			<div class="panel panel-default">
+				<div class="panel-body text-center product-body">
+					<%= image_tag experience.profile_picture.url(:medium) %><br/>
+					<%= link_to truncate(experience.name, :length => 50), :class => 'info', :itemprop => "name", :title => experience.name %>
+			</div>
+		</div>
+	</div>
+<% end %>
+</ul>
+<% end %>
+</div>

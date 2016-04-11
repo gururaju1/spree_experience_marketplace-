@@ -1,0 +1,6 @@
+<!-- insert_before 'div.center' -->
+
+ <div id="experience_profile_picture_field" class="field">
+ <legend><%= I18n.t('.profile_picture') %></legend>
+  <%= form.file_field :profile_picture %>
+</div>

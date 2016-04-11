@@ -1,0 +1,5 @@
+<!-- insert_top "[data-hook='experience_right_column_wrapper']" -->
+
+<div id="admin_profile_picture">
+	<%= image_tag @experience.profile_picture.url(:medium) %>
+</div>

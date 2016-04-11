@@ -1,0 +1,26 @@
+<% if products.any? %>
+		<div id="featured-products" class="row">
+		 
+			<% products.where(featured: true)[0..7].each do |product| %>
+				<% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
+				
+				<div id="product_<%= product.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+				
+					<div class="panel panel-default">
+        			<% cache(@taxon.present? ? [current_currency, @taxon, product] : [current_currency, product]) do %>
+								
+								<div class="panel-body text-center product-body">
+            			<%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+				 				</div>
+          			<div class="panel-footer text-center">
+									<%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %><br/>
+									<span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
+          			</div>
+        			<% end %>
+						</div>
+
+					</div>
+			<% end %>
+
+	</div>
+<% end %>

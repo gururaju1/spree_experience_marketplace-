@@ -1,0 +1,30 @@
+--- 
+es: 
+  bank_accounts: "Cuentas bancarias"  
+  add_bank_account: "Añadir cuenta bancaria"
+  new_bank_account: "Nueva cuenta bancaria"
+  spree: 
+    experience_signup: "Registro de proveedores"
+    name: "Nombre de la marca o la empresa"
+    password: "Contraseña"
+    password_confirmation: "Contraseña (otra vez)"
+    brand: "Nombre de la marca"
+    profile_picture: "Imagen de perfil"
+    admin: 
+      marketplace_settings: 
+        update: 
+    contacts_first_name: "Nombre (persona de  contacto)"
+    contacts_last_name: "Apellidos (persona de contacto)"
+    tax_id: "Número de identificación fiscal: CIF, NIF o equivalente"
+    success: "Ajustes de marketplace actualizados con éxito."
+    signup: "Enviar"
+    save: "Guardar"
+    experience_since: "Miembro desde hace"
+    seconds_ago: "segundos"
+    minutes_ago: "minutos"
+    hours_ago: "horas" 
+    days_ago: "días"
+    months_ago: "meses"
+    years_ago: "años"
+    details: "Detalles"
+  profile_picture: "Imagen de perfil"

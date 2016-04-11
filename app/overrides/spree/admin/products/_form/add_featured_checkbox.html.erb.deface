@@ -1,0 +1,10 @@
+<!-- insert_after '[data-hook="admin_product_form_promotionable"]' -->
+<% if spree_current_user and spree_current_user.admin? %>
+<div data-hook="admin_product_form_featured">
+      <%= f.field_container :featured do %>
+        <%= f.label :featured do %>
+          <%= f.check_box :featured %> <%= Spree.t(:featured) %>
+        <% end %>
+      <% end %>
+    </div>
+<% end %> 

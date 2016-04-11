@@ -1,0 +1,28 @@
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:cancel), spree.edit_admin_experience_path(@experience), :icon => 'icon-arrow-left' %></li>
+<% end %>
+
+<% content_for :page_title do %>
+   <%= I18n.t '.new_bank_account' %>
+<% end %>
+
+<div id='stripeError' class='errorExplanation' style='display:none;'></div>
+
+<%= form_for @object, url: spree.admin_experience_bank_accounts_path(@experience) do |f| %>
+  <%= f.field_container :account_number do %>
+    <%= f.label :account_number %>:<br />
+    <%= f.text_field :account_number %>
+  <% end %>
+  <%= f.field_container :routing_number do %>
+    <%= f.label :routing_number %>:<br />
+    <%= f.text_field :routing_number %>
+  <% end %>
+  <%= f.field_container :country_iso do %>
+    <%= f.label :country_iso, Spree.t(:country) %>:<br />
+    <%= f.collection_select :country_iso, available_countries, :iso, :name, {selected: 'US'}, {class: 'select2'} %>
+  <% end %>
+  <%= f.hidden_field :masked_number %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :token %>
+  <%= f.submit Spree.t(:save) %>
+<% end %>
